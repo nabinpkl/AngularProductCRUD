@@ -1,1 +1,19 @@
-<p>product-get works!</p>
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product Price</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.ProductName}}</td>
+            <td>{{product.ProductDescription}}</td>
+            <td>{{product.ProductPrice}}</td>
+            <td><a [routerLink]="['/edit',product.Id]" class="btn btn-primary">Edit</a></td>
+            <td><a (click)="deleteProduct(product.Id)" class="btn btn-danger">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
